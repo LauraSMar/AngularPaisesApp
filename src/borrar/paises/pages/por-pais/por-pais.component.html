@@ -1,0 +1,37 @@
+ 
+<h2>By Country</h2>
+<hr>
+<div class="row">
+
+
+    <div class="col"> 
+
+      <app-pais-input 
+              (onEnter)="search($event)"
+              (onDebounce)="sugerencias($event)"
+              placeholder="Searching by country ..."
+              >
+      </app-pais-input>
+
+    </div>
+</div>
+
+<hr>
+    <div *ngIf="error"
+        class="alert alert-info">
+        Element don't found!
+    </div>
+       
+    <div *ngIf="countries.length > 0"class="row">
+        <div class="col">
+          <app-pais-table [countries]="countries"></app-pais-table>  
+
+        </div>    
+     
+  </div> 
+
+      
+
+
+
+
